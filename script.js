@@ -74,6 +74,7 @@ const units = {
 		hour: new Unit('hours', 3600, false),
 		day: new Unit('days', 86400, false),
 		week: new Unit('weeks', 604800, false),
+		year: new Unit('years', 31536000, false),
 		millisecond: new Unit('milliseconds', 0.001, false),
 		// freedom
 		cubanMissileCrisis: new Unit('Cuban Missile Crises', 1123200, true),
@@ -122,7 +123,7 @@ function updateUnits() { // update units when type changes
 	updateValues(false);
 }
 
-const ROUNDING = 5; // number of decimal places to round to;
+const ROUNDING = 10; // number of decimal places to round to;
 function updateValues(side) { // side that was changed, boolean for false = left, true = right
 	let inputtedValue = document.getElementById((side ? 'right' : 'left') + '-input').value;
 	let output = document.getElementById((!side ? 'right' : 'left') + '-input');
@@ -134,7 +135,7 @@ function updateValues(side) { // side that was changed, boolean for false = left
 		const inputUnit = type[document.getElementById((side ? 'right' : 'left') + '-unit').value];
 		const outputUnit = type[document.getElementById((!side ? 'right' : 'left') + '-unit').value];
 
-		output.value = Math.round(inputtedValue * inputUnit.to(outputUnit) * (10 ** ROUNDING)) / (10 ** ROUNDING);
+		output.value = (inputtedValue * inputUnit.to(outputUnit)).toPrecision(ROUNDING);
 	}
 }
 
