@@ -30,6 +30,8 @@ html {
 	height: 1.5em;
 	text-align: center;
 	vertical-align: middle;
+	color: black;
+	background-color: transparent;
 }
 #type, #left-input, #right-input {
 	border-top-left-radius: 4px;
