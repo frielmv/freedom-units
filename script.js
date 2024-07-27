@@ -124,14 +124,18 @@ function updateUnits() { // update units when type changes
 
 const ROUNDING = 5; // number of decimal places to round to;
 function updateValues(side) { // side that was changed, boolean for false = left, true = right
-	let inputtedValue = parseFloat(document.getElementById((side ? 'right' : 'left') + '-input').value);
+	let inputtedValue = document.getElementById((side ? 'right' : 'left') + '-input').value;
 	let output = document.getElementById((!side ? 'right' : 'left') + '-input');
+	if(inputtedValue.length == 0) { // empty
+		output.value = '';
+	} else {
+		inputtedValue = parseFloat(inputtedValue);
+		const type = units[document.getElementById('type').value];
+		const inputUnit = type[document.getElementById((side ? 'right' : 'left') + '-unit').value];
+		const outputUnit = type[document.getElementById((!side ? 'right' : 'left') + '-unit').value];
 
-	const type = units[document.getElementById('type').value];
-	const inputUnit = type[document.getElementById((side ? 'right' : 'left') + '-unit').value];
-	const outputUnit = type[document.getElementById((!side ? 'right' : 'left') + '-unit').value];
-
-	output.value = Math.round(inputtedValue * inputUnit.to(outputUnit) * (10 ** ROUNDING)) / (10 ** ROUNDING);
+		output.value = Math.round(inputtedValue * inputUnit.to(outputUnit) * (10 ** ROUNDING)) / (10 ** ROUNDING);
+	}
 }
 
 // initial updates
