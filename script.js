@@ -123,7 +123,7 @@ function updateUnits() { // update units when type changes
 	updateValues(false);
 }
 
-const ROUNDING = 10; // number of decimal places to round to;
+const ROUNDING = 8; // number of decimal places to round to;
 function updateValues(side) { // side that was changed, boolean for false = left, true = right
 	let inputtedValue = document.getElementById((side ? 'right' : 'left') + '-input').value;
 	let output = document.getElementById((!side ? 'right' : 'left') + '-input');
@@ -135,7 +135,7 @@ function updateValues(side) { // side that was changed, boolean for false = left
 		const inputUnit = type[document.getElementById((side ? 'right' : 'left') + '-unit').value];
 		const outputUnit = type[document.getElementById((!side ? 'right' : 'left') + '-unit').value];
 
-		output.value = (inputtedValue * inputUnit.to(outputUnit)).toPrecision(ROUNDING);
+		output.value = parseFloat((inputtedValue * inputUnit.to(outputUnit)).toPrecision(ROUNDING));
 	}
 }
 
