@@ -27,7 +27,7 @@ html {
 	outline: 1px solid black;
 	width: 10em;
 	margin: 0;
-	padding: 0px;
+	padding: 0;
 	height: 1.5em;
 	text-align: center;
 	vertical-align: middle;
@@ -35,19 +35,19 @@ html {
 	background-color: white;
 }
 #type, #left-input, #right-input {
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
+	border-top-left-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
 }
 #type, #right-unit, #left-unit {
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
 }
 .input-image {
-	height: 16px;
+	height: 1rem;
 	aspect-ratio: 1 / 1;
 	vertical-align: middle;
-	margin-left: 1em;
-	margin-right: 1em;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
