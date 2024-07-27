@@ -2,6 +2,7 @@
 html {
 	font-family: Abel;
 	font-size: 16px;
+	background-color: white;
 }
 #center {
 	position: absolute;
@@ -31,7 +32,7 @@ html {
 	text-align: center;
 	vertical-align: middle;
 	color: black;
-	background-color: transparent;
+	background-color: white;
 }
 #type, #left-input, #right-input {
 	border-top-left-radius: 4px;
