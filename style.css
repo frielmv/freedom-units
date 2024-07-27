@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
 html {
 	font-family: Abel;
-	font-size: 16px;
+	font-size: min(16px, 1.5vw);
 	background-color: white;
 }
 #center {
@@ -22,10 +22,9 @@ html {
 .input {
 	display: inline-block;
 	font-family: Abel;
-	font-size: 16px;
+	font-size: 1rem;
 	border: none;
 	outline: 1px solid black;
-	border-radius: 0;
 	width: 10em;
 	margin: 0;
 	padding: 0px;
